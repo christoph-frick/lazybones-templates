@@ -1,3 +1,17 @@
+<%
+if (springboot) {
+%>buildscript {
+	repositories {
+		jcenter()
+	}
+	dependencies {
+		classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.1.+'
+	}
+}
+
+apply plugin: 'spring-boot'<%
+}
+%>
 apply plugin: 'groovy'
 
 repositories {
@@ -13,6 +27,11 @@ if (indy) {
 %>	compile 'org.codehaus.groovy:groovy-all:2.3.+:indy'<%
 } else {
 %>	compile 'org.codehaus.groovy:groovy-all:2.3.+'<%
+}
+%>
+<%
+if (springboot) {
+%>	compile("org.springframework.boot:spring-boot-starter")<%
 }
 %>
 }

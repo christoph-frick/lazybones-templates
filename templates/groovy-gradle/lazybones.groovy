@@ -1,6 +1,12 @@
+import org.apache.commons.io.FileUtils
+
 props = [:]
 props.indy = ask('Use indy (true/1/y) [false]: ', 'indy', 'false').toBoolean()
+props.springboot = ask('Need springboot (true/1/y) [false]: ', 'springboot', 'false').toBoolean()
 processTemplates "build.gradle", props
+if (!props.springboot) {
+	FileUtils.forceDelete(new File("${targetDir}/src/main/groovy/Application.groovy"))
+}
 if (hasFeature("scmExclusions")) {
 	scmExclusions ".DS_Store",
 		      "*~",
