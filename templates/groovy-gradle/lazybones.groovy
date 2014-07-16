@@ -1,4 +1,5 @@
 props = [:]
+props.indy = ask('Use indy (true/1/y) [false]: ', 'indy', 'false')
 processTemplates "build.gradle", props
 if (hasFeature("scmExclusions")) {
 	scmExclusions ".DS_Store",
