@@ -1,4 +1,3 @@
-<% useIndy = indy.toBoolean() %>
 apply plugin: 'groovy'
 
 repositories {
