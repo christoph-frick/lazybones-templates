@@ -1,5 +1,5 @@
 props = [:]
-props.useIndy = ask('Use indy (true/1/y) [false]: ', 'indy', 'false').toBoolean()
+props.indy = ask('Use indy (true/1/y) [false]: ', 'indy', 'false').toBoolean()
 processTemplates "build.gradle", props
 if (hasFeature("scmExclusions")) {
 	scmExclusions ".DS_Store",
