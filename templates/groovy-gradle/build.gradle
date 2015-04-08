@@ -5,7 +5,7 @@ if (springboot) {
 		jcenter()
 	}
 	dependencies {
-		classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.1.+'
+		classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.2.+'
 	}
 }
 
@@ -18,15 +18,15 @@ repositories {
 	jcenter()
 }
 <% if (indy) { %>
-sourceCompatibility = 1.7
-targetCompatibility = 1.7
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 <% } %>
 dependencies {
 <%
 if (indy) {
-%>	compile 'org.codehaus.groovy:groovy-all:2.3.+:indy'<%
+%>	compile 'org.codehaus.groovy:groovy-all:2.4.+:indy'<%
 } else {
-%>	compile 'org.codehaus.groovy:groovy-all:2.3.+'<%
+%>	compile 'org.codehaus.groovy:groovy-all:2.4.+'<%
 }
 %>
 <%
